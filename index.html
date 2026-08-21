@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="thiraiX - Tamil TV shows and serials streaming interface." />
+  <title>thiraiX | Tamil TV Shows & Serials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="top-glow top-glow-left"></div>
+  <div class="top-glow top-glow-right"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="thiraiX home">
+      <img src="assets/thiraix-logo.png" alt="thiraiX logo" class="brand-logo" />
+    </a>
+
+    <nav class="nav">
+      <button class="nav-link active" data-filter="all">Home</button>
+      <button class="nav-link" data-filter="Serial">Serials</button>
+      <button class="nav-link" data-filter="Show">Shows</button>
+      <button class="nav-link" data-filter="latest">Latest</button>
+    </nav>
+
+    <div class="header-actions">
+      <button id="searchToggle" class="icon-btn" aria-label="Search">⌕</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow accent">TAMIL TV SHOWS & SERIALS</span>
+          <h1 id="heroTitle">Watch trending Tamil entertainment on thiraiX</h1>
+          <p id="heroDescription">Fresh episodes, popular serials and entertaining shows — all organized in a sleek streaming-style interface.</p>
+          <div class="hero-actions">
+            <button id="heroPlay" class="btn btn-primary">▶ Play</button>
+            <button id="heroInfo" class="btn btn-secondary">More Info</button>
+          </div>
+        </div>
+        <div class="hero-brand-panel">
+          <img src="assets/thiraix-logo.png" alt="thiraiX" class="hero-logo" />
+          <p class="hero-panel-copy">Neon-inspired theme customized to match your brand identity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="searchPanel" class="search-panel hidden">
+      <input id="searchInput" type="search" placeholder="Search serials, shows or episodes..." autocomplete="off" />
+      <button id="searchClose" class="search-close" aria-label="Close search">×</button>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker accent">JUST ADDED</p>
+          <h2>Latest Episodes</h2>
+        </div>
+      </div>
+      <div id="latestGrid" class="card-grid"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker accent">POPULAR NOW</p>
+          <h2>Serials</h2>
+        </div>
+      </div>
+      <div id="serialGrid" class="card-grid"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker accent">FEATURED PICKS</p>
+          <h2>Shows</h2>
+        </div>
+      </div>
+      <div id="showGrid" class="card-grid"></div>
+    </section>
+
+    <section id="emptyState" class="empty-state hidden">
+      <h2>No videos found</h2>
+      <p>Try another search.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/thiraix-logo.png" alt="thiraiX logo" class="footer-logo" />
+      <p>Tamil TV Shows & Serials</p>
+    </div>
+    <p class="footer-note">Stream only content you have the right to distribute.</p>
+  </footer>
+
+  <div id="playerModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+    <div class="modal-backdrop" data-close="player"></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close="player" aria-label="Close">×</button>
+      <div class="video-shell">
+        <video id="videoPlayer" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="player-copy">
+        <p id="playerMeta" class="player-meta"></p>
+        <h2 id="playerTitle"></h2>
+        <p id="playerDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="infoModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <div class="modal-backdrop" data-close="info"></div>
+    <div class="modal-card info-card">
+      <button class="modal-close" data-close="info" aria-label="Close">×</button>
+      <div class="player-copy">
+        <p class="player-meta">ABOUT</p>
+        <h2 id="infoTitle"></h2>
+        <p id="infoDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
