@@ -12,10 +12,10 @@
 
 window.THIRAI_X_STREAM_OVERRIDES = {
   // Paste authorized direct media URLs below. Title matching is automatic.
-  // "x men": "https://cdn.example.com/x-men.mp4",
-  // "x2 x men united": "https://cdn.example.com/x-men-2.mp4",
-  // "captain america the first avenger": "https://cdn.example.com/captain-america.mp4",
-  // "the avengers": "https://cdn.example.com/the-avengers.mp4",
-  // "avengers infinity war": "https://cdn.example.com/infinity-war.mp4",
-  // "avengers endgame": "https://cdn.example.com/endgame.mp4"
+  // "x men": "https://dub.onestream.today/stream/video/39664",
+  // "x2 x men united": "https://dub.onestream.today/stream/video/60633",
+  // "captain america the first avenger": "https://dub.onestream.today/stream/video/38091",
+  // "the avengers": "https://dub.onestream.today/stream/video/47249",
+  // "avengers infinity war": "https://dub.onestream.today/stream/video/56829",
+  // "avengers endgame": "https://dub.onestream.today/stream/video/60627"
 };
