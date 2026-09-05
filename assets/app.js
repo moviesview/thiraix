@@ -110,7 +110,7 @@ function isMovieRecord(video = {}) {
 
 
 const DIRECT_MOVIE_STREAMS = {
-  "x men": "https://dub6-1.uptodub.ch/files/Tamil%20Dubbed%20Collections/X%20Men%20Complete%20Collections/X%20Men%20(2000)/Mp4%20HD%20(640x360)/X%20Men%20(2000)%20HD%20(640x360).mp4?h=f74a6a9c607a2a8b9c7a980984ca7077ed9aaa178f5e8c2ff39b235257258c45&e=1789102465",
+  "x men": "https://cdn.juicybits.site/files/www.1TamilMV.meme_-_G.D.N._2026_TRUE_WEB-DL_-_4K_SDR_-_2160p_HQ_-_HEVC_-_Tamil__Telugu__Hindi__Malayalam__Kannada.mkv?token=bbf49872e81bd38a56f04b446e7f7800&exp=1788603350",
   "x2 x men united": "https://dub6-1.uptodub.ch/files/Tamil%20Dubbed%20Collections/X%20Men%20Complete%20Collections/X%20Men%202%20(2003)/X%20Men%202%20(640x360)/X%20Men%202%202003%20HD.mp4?h=4df2314fa831df51028817f1b1950e037597361a9fbcf35e30f0a5522d9c47d3&e=1789102620",
   "captain america the first avenger": "https://dub6-1.uptodub.ch/files/Tamil%20Dubbed%20Collections/Captain%20America%20Duology%20Collections/Captain%20America%20(2011)/Mp4%20HD%20(640x360)/Captain%20America%20(2011)%20HD%20(640x360).mp4?h=fb60d8d1bb3dad9652b5d0dcb3595f8634a3b437e76b679148173a3714c91ddf&e=1789102636",
   "the avengers": "https://dub6-1.uptodub.ch/files/Tamil%20Dubbed%20Collections/The%20Avengers%20Trilogy%20Collections/The%20Avengers%20(2012)/The%20Avengers%20(640x360)/The%20Avengers%20HD.mp4?h=00f9c12d279dc0ad394c5f48a7e6165d5f3dd698aecbfbaf1b2f9c75aa7ddb76&e=1789102724",
