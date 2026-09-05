@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="thiraiX - MCU movie collections" />
+  <title>thiraiX | MCU</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="home-page">
+  <div id="siteLoader" class="site-loader"><div class="site-loader-inner"><img src="assets/thiraix-logo.png" alt="thiraiX" /><div class="loader-spinner"></div><span>Loading thiraiX...</span></div></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="thiraiX home"><img src="assets/thiraix-logo.png" alt="thiraiX" /></a>
+      <nav class="header-mode-switch" aria-label="Movie section">
+        <a class="header-mode active" href="index.html" aria-current="page">MCU</a>
+        <a class="header-mode" href="collection.html?collection=tamil">Tamil Movies</a>
+      </nav>
+      <button id="searchToggle" class="icon-button" type="button" aria-label="Search collections"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg></button>
+    </header>
+    <div id="searchBar" class="searchbar hidden"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg><input id="searchInput" type="search" placeholder="Search collections" autocomplete="off" /><button id="searchClose" type="button">×</button></div>
+    <main>
+      <section class="hero-shell" aria-label="Featured collections">
+        <div class="hero-carousel">
+          <button id="heroPrev" class="hero-nav prev" type="button" aria-label="Previous banner">‹</button>
+          <div id="heroTrack" class="hero-track"></div>
+          <button id="heroNext" class="hero-nav next" type="button" aria-label="Next banner">›</button>
+          <div id="heroDots" class="hero-dots"></div>
+        </div>
+      </section>
+      <section class="category-glance" aria-labelledby="collectionsTitle">
+        <div class="glance-head"><div><p>Collections</p><h2 id="collectionsTitle">Choose a watch collection</h2></div></div>
+        <div id="categoryCards" class="category-cards"></div>
+      </section>
+      <section class="ad-zone ad-zone-content" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-content-row"><div class="ad-slot" data-ad-slot="native"></div><div class="ad-slot ad-slot-rectangle" data-ad-slot="300x250"></div></div></section>
+    </main>
+  </div>
+  <script src="assets/watch-order.js"></script>
+  <script src="assets/thumbnail-map.js?v=20260905-3"></script>
+  <script src="assets/home.js"></script>
+  <script src="assets/ads.js"></script>
+</body>
+</html>
