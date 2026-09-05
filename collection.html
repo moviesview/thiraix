@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <title>thiraiX | Collection</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="collection-page">
+  <div id="siteLoader" class="site-loader"><div class="site-loader-inner"><img src="assets/thiraix-logo.png" alt="thiraiX" /><div class="loader-spinner"></div><span>Loading collection...</span></div></div>
+  <div class="app-shell">
+    <header class="topbar collection-topbar">
+      <a class="collection-back" href="index.html" aria-label="Back to collections">‹</a>
+      <a class="brand" href="index.html"><img src="assets/thiraix-logo.png" alt="thiraiX" /></a>
+      <button id="searchToggle" class="icon-button" type="button" aria-label="Search movies"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg></button>
+    </header>
+    <div id="searchBar" class="searchbar hidden"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg><input id="searchInput" type="search" placeholder="Search this collection" autocomplete="off" /><button id="searchClose" type="button">×</button></div>
+    <main>
+      <section class="watch-collection collection-page-section" data-collection="doomsday">
+        <div class="collection-head"><div><p data-role="collection-eyebrow">COLLECTION</p><h2 data-role="collection-title">Loading collection...</h2><span data-role="collection-description"></span></div><strong class="collection-count"></strong></div>
+        <div class="video-grid ordered-grid" aria-live="polite"></div>
+      </section>
+      <section id="emptyState" class="empty-state hidden"><div class="empty-icon">▶</div><h2>No movies found</h2><p>Try another search.</p></section>
+    </main>
+  </div>
+
+  <div id="playerModal" class="player-modal hidden" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+    <div class="player-page">
+      <header class="player-header">
+        <button id="playerClose" class="player-back" type="button" aria-label="Back to collection">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="player-heading">
+          <strong id="playerTitle">Video</strong>
+          <span id="playerMeta">thiraiX Player</span>
+        </div>
+        <button id="shareVideo" class="player-share" type="button" aria-label="Share video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.83-4A3 3 0 0 0 15 5c0 .2.02.39.06.58L8.91 9.12A3 3 0 0 0 7 8.5a3 3 0 1 0 1.91 5.38l6.15 3.54A3 3 0 0 0 15 18c0 .35.06.69.17 1A3 3 0 1 0 17 15.18l-6.18-3.56c.04-.2.06-.41.06-.62s-.02-.42-.06-.62L17 6.82c.3.12.64.18 1 .18Z"/></svg>
+        </button>
+      </header>
+
+      <div class="player-workspace">
+        <section class="player-primary-panel" aria-label="Now playing">
+          <div id="videoStage" class="video-stage">
+            <video id="videoPlayer" playsinline preload="metadata"></video>
+            <div id="videoLoader" class="video-loader hidden"><div class="video-loader-spinner"></div><span>Loading video...</span></div>
+            <div id="gestureLayer" class="gesture-layer" aria-hidden="true">
+              <div class="gesture-zone gesture-left"><span id="gestureBackFeedback" class="gesture-feedback">↶ 10s</span></div>
+              <div class="gesture-zone gesture-center"><span id="gestureCenterFeedback" class="gesture-feedback">▶</span></div>
+              <div class="gesture-zone gesture-right"><span id="gestureForwardFeedback" class="gesture-feedback">10s ↷</span></div>
+            </div>
+            <button id="bigPlay" class="big-play" type="button" aria-label="Play or pause">▶</button>
+            <div id="playerControls" class="custom-controls yt-controls">
+              <div class="seek-wrap" id="seekWrap"><div id="seekTooltip" class="seek-tooltip">0:00</div><input id="seekBar" class="seek" type="range" min="0" max="100" value="0" step="0.05" aria-label="Seek video" /></div>
+              <div class="controls-row">
+                <button id="playPause" class="control-play" type="button" aria-label="Play or pause">▶</button>
+                <div class="volume-control"><button id="muteToggle" type="button" aria-label="Mute">🔊</button><input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" value="1" step="0.05" aria-label="Volume" /></div>
+                <span id="timeText" class="time-text">0:00 / 0:00</span><div class="control-spacer"></div>
+                <button id="subtitleToggle" class="cc-control" type="button" aria-label="Subtitles">CC</button>
+                <button id="settingsToggle" class="settings-control" type="button" aria-label="Settings">⚙</button>
+                <button id="fullscreenToggle" type="button" aria-label="Fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5m13 5h5v-5"/></svg></button>
+              </div>
+              <button id="back10" class="sr-control" type="button">Back 10</button><button id="forward10" class="sr-control" type="button">Forward 10</button><button id="speedToggle" class="sr-control" type="button">1×</button><button id="audioToggle" class="sr-control" type="button">Audio</button><button id="qualityToggle" class="sr-control" type="button">Auto</button>
+            </div>
+            <div id="playerMenu" class="player-menu hidden"><div class="player-menu-head"><strong id="playerMenuTitle">Settings</strong><button id="playerMenuClose" type="button">×</button></div><div id="playerMenuOptions" class="player-menu-options"></div></div>
+          </div>
+
+          <section class="now-playing player-now-playing">
+            <div class="player-title-row"><span id="playerBadge" class="now-badge">Movie</span><span class="quality-auto-label">AUTO QUALITY</span></div>
+            <h2 id="playerDisplayTitle"></h2>
+            <p id="playerDescription"></p>
+          </section>
+
+          <section id="playerAdStrip" class="player-ad-strip ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="player-responsive-ad" data-ad-slot="player-responsive"></div></section>
+          <div class="player-square-ad ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div data-ad-slot="300x250"></div></div>
+        </section>
+
+        <aside class="recommended-section player-next-panel" aria-labelledby="recommendedTitle">
+          <div class="recommended-head">
+            <div><p>UP NEXT</p><h2 id="recommendedTitle">Next videos</h2></div>
+            <span id="recommendedCount" class="recommended-count"></span>
+          </div>
+          <div id="recommendedVideos" class="recommended-grid" aria-live="polite"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script src="assets/config.js"></script><script src="assets/watch-order.js"></script><script src="assets/thumbnail-map.js"></script><script src="assets/responsive.js"></script><script src="assets/app.js"></script><script src="assets/ads.js"></script>
+</body>
+</html>
