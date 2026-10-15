@@ -1,0 +1,42 @@
+.player-tools { display:flex; flex-wrap:wrap; gap:8px; padding:12px 0; }
+.player-tools button,.episode-panel button,.playback-notice button,.unlock-controls { min-height:44px; padding:10px 14px; border:1px solid #d9dce8; border-radius:10px; background:#fff; color:#262238; font:600 13px Inter,sans-serif; cursor:pointer; }
+.player-tools button:hover,.episode-panel button:hover { background:#eeeafa; }
+.episode-panel { margin:8px 0 16px; padding:16px; border:1px solid #dddfea; border-radius:14px; background:#fff; }
+.episode-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.episode-heading h3 { margin:0; font-size:16px; }
+.episode-heading label { display:flex; align-items:center; gap:8px; min-height:44px; font-size:13px; }
+.episode-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.episode-list button.active { color:#fff; background:#6840d8; border-color:#6840d8; }
+.episode-panel button:disabled { opacity:.5; cursor:default; }
+.playback-notice { position:absolute; z-index:45; left:50%; top:45%; transform:translate(-50%,-50%); width:min(90%,440px); padding:18px; background:rgba(18,17,25,.96); color:#fff; text-align:center; border-radius:12px; }
+.playback-notice p { margin:0 0 12px; font-size:14px; line-height:1.5; }
+.unlock-controls { position:absolute; z-index:60; top:16px; right:16px; }
+.controls-locked .custom-controls,.controls-locked .big-play,.controls-locked .gesture-layer,.controls-locked .player-menu { visibility:hidden!important; pointer-events:none!important; }
+.controls-locked .unlock-controls { visibility:visible!important; }
+.continue-section { margin:20px 0 28px; }
+.continue-section h2 { font-size:20px; margin:0 0 12px; }
+.continue-list { display:flex; gap:12px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x proximity; }
+.continue-card { position:relative; flex:0 0 260px; padding:16px 40px 16px 16px; background:#fff; border:1px solid #dedfea; border-radius:12px; scroll-snap-align:start; }
+.continue-card a { display:flex; flex-direction:column; gap:10px; color:#262238; text-decoration:none; }
+.continue-card strong { font-size:14px; line-height:1.4; }
+.continue-card span { color:#6540cb; font-size:12px; }
+.continue-card progress { width:100%; height:5px; accent-color:#7645dd; }
+.continue-card button { position:absolute; top:2px; right:2px; width:36px; height:44px; background:none; border:0; color:#615a72; cursor:pointer; font-size:22px; }
+button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible { outline:3px solid #9066f5; outline-offset:3px; }
+.player-tools .hidden,.hidden { display:none!important; }
+@media(min-width:901px) { .theatre-mode .player-workspace { grid-template-columns:minmax(0,1fr)!important; } .theatre-mode .player-next-panel { width:100%; } .theatre-mode .player-page { max-width:1600px; } }
+@media(max-width:900px) { #theatreToggle { display:none; } }
+@media(pointer:coarse) { .controls-row button { min-width:44px!important; min-height:44px!important; } .seek-wrap { min-height:28px; display:flex; align-items:center; } .seek { min-height:24px; } }
+@media(max-width:480px) { .controls-row { gap:2px!important; } .time-text { font-size:10px!important; white-space:nowrap; } .volume-control { display:none!important; } .episode-panel { padding:12px; } .player-tools { gap:6px; } .player-tools button { font-size:12px; padding:8px 10px; } .playback-notice { padding:12px; } .playback-notice p { font-size:12px; margin-bottom:8px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+
+.search-title-result { display:block; padding:16px; background:white; border:1px solid #dddfea; border-radius:12px; color:#6840d8; text-decoration:none; font-weight:600; }
+/* Reserve normal card widths even when a collection contains a single series. */
+.collection-page .video-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--card-min,180px)),1fr))!important; }
+.continue-section { padding-inline:clamp(12px,2vw,26px); }
+body.player-open { overflow:hidden!important; }
+@media(max-width:900px) { .player-tools { padding-inline:12px; } .episode-panel { margin-inline:12px; } }
+
+.collection-page .series-player .player-workspace { grid-template-columns:minmax(0,1fr); max-width:1100px; margin-inline:auto; }
+/* Keep targets usable on hybrid devices whose browser reports a fine pointer. */
+.controls-row button { min-width:44px!important; min-height:44px!important; }
